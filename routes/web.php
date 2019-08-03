@@ -12,8 +12,14 @@
 */
 
 
+use App\Mail\NewUserWelcomeMail;
 
 Auth::routes();
+
+
+Route::get('/emails',function(){
+    return new NewUserWelcomeMail();
+});
 
 
 Route::post('/follow/{user}', 'FollowsController@store');
